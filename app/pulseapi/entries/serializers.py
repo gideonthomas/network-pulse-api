@@ -2,7 +2,8 @@
 from rest_framework import serializers
 
 from pulseapi.entries.models import(
-    Entry
+    Entry,
+    Tag
 )
 
 class EntrySerializer(serializers.ModelSerializer):
@@ -17,7 +18,7 @@ class EntrySerializer(serializers.ModelSerializer):
     description = serializers.CharField()
     content_url = serializers.URLField()
     thumbnail_url = serializers.URLField()
-    tags = serializers.CharField()
+    tags = serializers.StringRelatedField(many=True)
 
     class Meta:
         """
