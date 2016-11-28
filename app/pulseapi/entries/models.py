@@ -46,3 +46,6 @@ class Entry(models.Model):
         Make plural not be wrong
         """
         verbose_name_plural = "entries"
+        
+    def __str__(self):
+        return str(self.title)
